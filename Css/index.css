@@ -896,6 +896,9 @@ footer {
   .navbar .d-flex.align-items-center {
     gap: 26px;
   }
+   .logo-text img{
+    width: 70%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -906,5 +909,37 @@ footer {
   .navbar-dark .navbar-nav .nav-link {
     font-size: 0.75rem;
     padding-inline: 0;
+  }
+}
+
+@media (max-width: 370px) {
+  .main-navbar .cta-btn.d-inline-flex.d-lg-none {
+    padding: 6px 12px;
+    width: auto;
+    font-size: 0.7rem;
+  }
+ 
+}
+
+.top-hero-wrapper::before {
+  pointer-events: none;   
+}
+
+
+@media (max-width: 991.98px) {
+  .navbar-collapse.show {
+    position: fixed;
+    top: 56px;        
+    left: 0;
+    right: 0;
+    z-index: 2000;       
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+  }
+
+
+  .main-navbar,
+  .main-navbar.is-fixed {
+    z-index: 2100;
   }
 }

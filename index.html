@@ -422,24 +422,15 @@
     const footerLinks = document.querySelectorAll('.quiz-footer-nav a[data-target]');
 
     // change background and toggle fixed state on scroll
-    function updateNavbarOnScroll() {
-      if (window.scrollY > 50) {
-        // make navbar fixed and add scrolled styles
-        if (!navbar.classList.contains('is-fixed')) {
-          navbar.classList.add('is-fixed');
-          // add top padding to body to prevent content jump
-          document.body.style.paddingTop = navbar.offsetHeight + 'px';
-        }
-        navbar.classList.add('scrolled');
-      } else {
-        // revert to normal flow
-        if (navbar.classList.contains('is-fixed')) {
-          navbar.classList.remove('is-fixed');
-          document.body.style.paddingTop = '';
-        }
-        navbar.classList.remove('scrolled');
-      }
-    }
+   function updateNavbarOnScroll() {
+  if (window.scrollY > 50) {
+    navbar.classList.add('is-fixed');
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('is-fixed');
+    navbar.classList.remove('scrolled');
+  }
+}
 
     window.addEventListener('scroll', updateNavbarOnScroll);
     // ensure correct state on load if page is already scrolled
