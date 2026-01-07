@@ -1,3 +1,4 @@
+ <!-- landing page with animation good  -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -437,25 +438,38 @@
     updateNavbarOnScroll();
 
     function hideAllSections() {
-      sections.forEach(sec => sec.style.display = 'none');
+      // remove .show so CSS transition fades/slides sections out
+      sections.forEach(sec => {
+        sec.classList.remove('show');
+        // after transition ends, hide the element from layout
+        setTimeout(() => {
+          if (!sec.classList.contains('show')) sec.style.display = 'none';
+        }, 380); // slightly longer than CSS transition
+      });
     }
 
     function showSection(id) {
       hideAllSections();
+      // hide hero smoothly
+      hero.classList.remove('show');
       hero.style.display = 'none';
       topHeroWrapper.classList.add('no-hero-bg'); //remoove background
 
       const target = document.getElementById(id);
       if (target) {
+        // make it participate in layout first, then add .show to animate in
         target.style.display = 'block';
+        requestAnimationFrame(() => target.classList.add('show'));
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
 
     function showHeroOnly() {
       hideAllSections();
-      hero.style.display = 'block';
       topHeroWrapper.classList.remove('no-hero-bg'); // add background
+      // show hero with animation
+      hero.style.display = 'flex';
+      requestAnimationFrame(() => hero.classList.add('show'));
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 

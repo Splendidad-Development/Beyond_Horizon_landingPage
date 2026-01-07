@@ -46,10 +46,21 @@ img {
   flex-direction: column;
 }
 
+/* Sections animation: hidden by default; add .show to fade/slide in */
 .section-wrapper {
   display: none;
   flex: 1 0 auto;
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 320ms ease, transform 320ms ease;
+  will-change: opacity, transform;
 }
+
+.section-wrapper.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+} 
 
 /* Navbar */
 .navbar {
@@ -165,7 +176,18 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  /* animation (initially hidden; make visible with .show) */
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 420ms ease, transform 420ms ease;
+  will-change: opacity, transform;
 }
+
+.hero.show {
+  opacity: 1;
+  transform: translateY(0);
+} 
 
 .hero-orb-wrap {
   width: 480px;
