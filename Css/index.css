@@ -384,9 +384,9 @@ section {
   color: #1fd1ff;
   font-weight: 600;
 }
-/* كرت People فقط */
 .plan-card-people {
-  background: #050b13;
+  background: rgba(9, 20, 35, 0.95);
+  
   border-radius: 12px;
   padding: 22px 26px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -395,28 +395,24 @@ section {
   gap: 18px;
 }
 
-/* الأيقونة */
 .plan-card-people .plan-icon img {
   width: 40px;
   height: 40px;
   object-fit: contain;
 }
 
-/* People + النص كله في نفس العمود */
 .plan-card-people .plan-content {
   display: flex;
   flex-direction: row;
   gap: 140px;
 }
 
-/* عنوان People */
 .plan-card-people .plan-title {
   font-size: 20px;
   font-weight: 700;
   margin: 0 0 6px;
 }
 
-/* US AS EMPLOYEE + السطور اللي تحت */
 .plan-card-people .plans-bottom-text {
   font-size: 14px;
   line-height: 1.5;
